@@ -1,4 +1,25 @@
+awscliv2.zip
+aws
+locustfile.cpython-312.pyc
+# ---- Terraform ----
 .terraform/
 terraform.tfstate
 terraform.tfstate.backup
 *.tfstate*
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.tfstate.lock.info
+terraform/crash.log
+terraform/*.tfvars
+terraform/*.tfplan
+
+# ---- Word docs and temp files ----
+*.docx
+~$*
+~WRL*.tmp
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+desktop.ini

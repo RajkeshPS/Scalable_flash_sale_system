@@ -1,0 +1,5 @@
+Method,Name,Error,Occurrences
+POST,/purchase,HTTPError('409 Client Error: Conflict for url: /purchase'),45204
+POST,/purchase,HTTPError('429 Client Error: Too Many Requests for url: /purchase'),21
+POST,/purchase,"ConnectionRefusedError(111, 'Connection refused')",1
+POST,/purchase,"gaierror(-2, 'Name or service not known')",17

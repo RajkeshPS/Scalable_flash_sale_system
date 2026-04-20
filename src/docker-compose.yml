@@ -1,0 +1,27 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  app-memory:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      BACKEND_MODE: memory
+      STOCK_COUNT: "100"
+    depends_on:
+      - redis
+
+  app-redis:
+    build: .
+    ports:
+      - "8081:8080"
+    environment:
+      BACKEND_MODE: redis
+      STOCK_COUNT: "100"
+      REDIS_ADDR: redis:6379
+      RESILIENCE_MODE: ${RESILIENCE_MODE:-none}
+    depends_on:
+      - redis
